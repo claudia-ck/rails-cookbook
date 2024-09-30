@@ -1,6 +1,11 @@
 <h1>All categories</h1>
+<%= link_to "Add category", new_category_path %>
 
-<% @categories.each do |category| %>
-  <p><%= category.name %></p>
-  <%= link_to "delete", category ,data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %>
-<% end %>
+<ol>
+  <% @categories.each do |category| %>
+  <li>
+    <%= link_to category.name, category %>
+    <%= link_to "delete", category ,data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %>
+  </li>
+  <% end %>
+</ol>

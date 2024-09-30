@@ -1,3 +1,5 @@
+<%= link_to "back", category_path(@category) %>
+
 <h1>New bookmark</h1>
 <%= simple_form_for [@category, @bookmark] do |f| %>
   <%= f.input :comment %>
