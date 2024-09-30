@@ -16,11 +16,9 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:category_id])
     @bookmark = Bookmark.find(params[:id])
-    @bookmark.category = @category
     @bookmark.destroy
-    redirect_to category_path(@category), status: :see_other
+    redirect_to category_path(@bookmark.category), status: :see_other
   end
 
   private
