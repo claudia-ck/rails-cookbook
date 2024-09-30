@@ -2,7 +2,7 @@ class Bookmark < ApplicationRecord
   belongs_to :recipe
   belongs_to :category
 
-  validates :comment, presence: true
+  validates :comment, :recipe_id, presence: true
   validates :comment, length: { minimum: 6 }
-  validates :recipe, uniqueness: { scope: :category }
+  validates :recipe_id, uniqueness: { scope: :category_id }
 end
