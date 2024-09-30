@@ -20,7 +20,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     @bookmark.category = @category
     @bookmark.destroy
-    redirect_to category_path(@category)
+    redirect_to category_path(@category), status: :see_other
   end
 
   private
