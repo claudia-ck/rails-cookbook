@@ -1,11 +1,24 @@
-<h1>All categories</h1>
-<%= link_to "Add category", new_category_path %>
+<div class = "banner d-flex justify-content-center align-items-center">
+    <h1>Your Cookbook</h1>
+</div>
 
-<ol>
-  <% @categories.each do |category| %>
-  <li>
-    <%= link_to category.name, category %>
-    <%= link_to "delete", category ,data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %>
-  </li>
-  <% end %>
-</ol>
+<div class = "container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>List of categories</h1>
+    <%= link_to "new category", new_category_path, class: "btn btn-warning"%></li>
+  </div>
+
+<%# From references  %>
+  <div class = "card-container">
+    <ol style="--length: 5" role="list">
+      <% @categories.each do |category| %>
+      <li style="--i: 1">
+        <h3><%= link_to category.name, category %></h3>
+        <p>no. of bookmarks:<%= category.bookmarks.length %></p>
+        <p><%= link_to "delete", category ,data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "card-icon" %></p>
+      </li>
+      <% end %>
+
+    </ol>
+  </div>
+</div>

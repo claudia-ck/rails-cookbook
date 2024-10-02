@@ -1,0 +1,48 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background: rgb(255, 255, 255);
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+// own design : https://codepen.io/michellebarker/pen/poLoeRq
+.navbar-cookbook{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #be491a;
+  padding: 0px 10px;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+
+}
+
+.nav-links-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: white;
+  padding: 5px 5px;
+  padding: 5px 25px;
+  margin: 0 20px;
+  background: #ffc107;
+
+  border-radius: 5px;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+}

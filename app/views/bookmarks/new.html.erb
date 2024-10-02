@@ -1,8 +1,19 @@
 <%= link_to "back", category_path(@category) %>
 
-<h1>New bookmark</h1>
-<%= simple_form_for [@category, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :recipe%>
-  <%= f.submit %>
-<% end %>
+<div class = "banner d-flex justify-content-center align-items-center">
+    <h1><%= @category.name %></h1>
+</div>
+
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>Create bookmark</h1>
+  </div>
+
+  <div class="form-container">
+    <%= simple_form_for([@category, @bookmark], defaults: { wrapper_html: { class: "form-new" }, label_html:{ class: "form-label"}}) do |f| %>
+      <%= f.input :comment, class:  "form-control" %>
+      <%= f.association :recipe, class:  "form-control" %>
+      <%= f.submit "add bookmark", class: "btn btn-warning btn-font-white" %>
+    <% end %>
+  </div>
+</div>
